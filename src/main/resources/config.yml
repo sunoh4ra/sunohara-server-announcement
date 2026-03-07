@@ -1,0 +1,15 @@
+# 公告显示前缀
+announcement-prefix: "§6[系统公告]§r "
+
+# 是否记录公告到日志
+log-announcements: true
+
+# 最大公告长度
+max-announcement-length: 256
+
+# BossBar 显示时长（秒），0 表示不自动移除
+bossbar-duration-seconds: 10
+
+# 权限系统是否启用
+permissions:
+  enabled: true

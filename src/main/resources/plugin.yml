@@ -1,0 +1,52 @@
+name: SunoharaServerAnnouncement
+version: ${project.version}
+description: ${project.description}
+author: Sunohara Team
+main: com.sunohara.announcement.AnnouncementPlugin
+api-version: '1.21'
+
+commands:
+  announce:
+    description: 发送服务器公告
+    usage: /announce <message>
+    permission: sunohara.announce
+    aliases: [ann, notice]
+  ahelp:
+    description: 查看公告系统帮助
+    usage: /ahelp
+    permission: sunohara.help
+  areload:
+    description: 重新加载配置文件
+    usage: /areload
+    permission: sunohara.config.reload
+
+permissions:
+  sunohara.*:
+    description: 所有公告系统权限
+    children:
+      sunohara.announce: true
+      sunohara.announce.admin: true
+      sunohara.config.reload: true
+      sunohara.broadcast: true
+      sunohara.help: true
+    default: op
+
+  sunohara.announce:
+    description: 允许使用公告命令
+    default: op
+
+  sunohara.announce.admin:
+    description: 允许使用管理员功能
+    default: op
+
+  sunohara.config.reload:
+    description: 允许重新加载配置文件
+    default: op
+
+  sunohara.broadcast:
+    description: 允许广播消息到全服
+    default: op
+
+  sunohara.help:
+    description: 允许查看帮助信息
+    default: true
